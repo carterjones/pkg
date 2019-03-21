@@ -10,8 +10,18 @@ jobs:
       script:
         - cd ./emacs/centos7
         - make
+    - stage: build
+      env: git
+      script:
+        - cd ./git/centos7
+        - make
     - stage: test
       env: emacs
       script:
         - cd ./emacs/centos7
+        - make test
+    - stage: test
+      env: git
+      script:
+        - cd ./git/centos7
         - make test
