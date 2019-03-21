@@ -1,0 +1,17 @@
+language: bash
+sudo: required
+os:
+  - linux
+
+jobs:
+  include:
+    - stage: build
+      env: emacs
+      script:
+        - cd ./emacs/centos7
+        - make
+    - stage: test
+      env: emacs
+      script:
+        - cd ./emacs/centos7
+        - make test
