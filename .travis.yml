@@ -15,6 +15,11 @@ jobs:
       script:
         - cd ./git/centos7
         - make
+    - stage: build
+      env: zsh
+      script:
+        - cd ./zsh/centos7
+        - make
     - stage: test
       env: emacs
       script:
@@ -24,4 +29,9 @@ jobs:
       env: git
       script:
         - cd ./git/centos7
+        - make test
+    - stage: test
+      env: zsh
+      script:
+        - cd ./zsh/centos7
         - make test
